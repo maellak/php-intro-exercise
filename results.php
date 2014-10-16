@@ -1,10 +1,26 @@
 <?php
-$movies=array("Drama"=>array("The Shawshank Redemption","The Green Mile","Requiem for a Dream"),"Comedy"=>array("The Hangover","Knocked Up","Due Date"),"Horror"=>array("The Shining","Halloween","The Conjuring"));
+$filmdata= array("The Shawshank Redemption"=>"Drama","The Green Mile"=>"Drama","Requiem for a Dream"=>"Drama","The Hangover"=>"Comedy","Knocked Up"=>"Comedy","Due Date"=>"Comedy","Halloween"=>"Horror","The Conjuring"=>"Horror","The Shining"=>"Horror");
 
-if ($_REQUEST['']){
+if ($_REQUEST['searchfield'] && $_REQUEST['searchtype']){
+	$mysrc=$_REQUEST['searchfield'];
+	$mytype=$_REQUEST['searchtype'];
 
-
-	
+	echo "<i>Results for '".$mysrc."' - category: ".$mytype."</i><br/><br/>";
+	$foundrslts=0;
+	foreach($filmdata as $movie_title=>$movie_gen){
+		if ($mytype==$movie_gen){
+			$findst= strpos($movie_title,$mysrc);
+			if ($findst!==false){
+				echo "&bull; ".$movie_title."<br/>";
+				$foundrslts++;
+			}
+		}
+	}
+	if ($foundrslts==0){
+		echo "Oops, nothing found";
+	}
+}else{
+	echo "<span style=\"color:#fc0000;\">Please notice that all fields above are required.</span>";
 }
 
 
