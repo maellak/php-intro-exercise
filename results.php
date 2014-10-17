@@ -1,4 +1,7 @@
 <?php
+
+require_once("movie_search.html");
+
 $filmdata= array("The Shawshank Redemption"=>"Drama","The Green Mile"=>"Drama","Requiem for a Dream"=>"Drama","The Hangover"=>"Comedy","Knocked Up"=>"Comedy","Due Date"=>"Comedy","Halloween"=>"Horror","The Conjuring"=>"Horror","The Shining"=>"Horror");
 
 if ($_REQUEST['searchfield'] && $_REQUEST['searchtype']){
