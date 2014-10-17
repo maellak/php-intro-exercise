@@ -1,0 +1,28 @@
+<html>
+  <head>
+       <link rel="stylesheet" type="text/css" href="style.css">
+       <script type="text/javascript" src="check.js"></script>
+
+  </head>		
+	
+<form name="searchform" action="search_movie.php" method="post" onsubmit="return validateForm();">
+  <fieldset class="search-info">
+    <label>
+      <h3> Search Movie</h3>   
+	<input id="moviename" type="text" name="moviename" value=""  placeholder="movie name"/><br>
+    <select id="category" name="category">
+        <option selected="selected" value="comedy">Comedy</option>
+        <option value="horror">Horror</option>
+        <option value="drama">Drama</option>
+      </select>
+    </label>
+ 
+  </fieldset>
+  <fieldset class="search-action">
+    <input class="btn" type="submit" name="search" value="Search">  
+
+  </fieldset>
+</form>
+
+
+</html>
