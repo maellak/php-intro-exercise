@@ -8,11 +8,11 @@ if ($_REQUEST['searchfield'] && $_REQUEST['searchtype']){
 	$mysrc=$_REQUEST['searchfield'];
 	$mytype=$_REQUEST['searchtype'];
 
-	echo "<i>Results for '".$mysrc."' - category: ".$mytype."</i><br/><br/>";
+	echo "<br/><i>Results for '".$mysrc."' - category: ".$mytype."</i><br/><br/>";
 	$foundrslts=0;
 	foreach($filmdata as $movie_title=>$movie_gen){
 		if ($mytype==$movie_gen){
-			$findst= strpos($movie_title,$mysrc);
+			$findst= strpos(strtolower($movie_title),strtolower($mysrc));
 			if ($findst!==false){
 				echo "&bull; ".$movie_title."<br/>";
 				$foundrslts++;
